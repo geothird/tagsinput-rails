@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'tagsinput-rails/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'tagsinput-rails'
+  spec.name          = 'tagsinput-rails4'
   spec.version       = Tagsinput::Rails::VERSION
   spec.authors       = ['Roman Greshny']
   spec.email         = ['greshny@gmail.com']
@@ -16,10 +16,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'http://github.com/greshny/tagsinput-rails/'
   spec.license       = 'MIT'
 
-  spec.files         = Dir['{lib,vendor}/**/*'] + ['LICENSE.txt', 'README.md']
-  spec.require_paths = ['lib']
+  spec.required_rubygems_version = ">= 1.3.6"
 
-  spec.add_dependency 'railties', '~> 3.1'
-  spec.add_development_dependency 'bundler', '~> 1.3'
-  spec.add_development_dependency 'rake'
+  spec.add_dependency "railties", ">= 3.1.0"
+
+  spec.files        = `git ls-files`.split("\n")
+  spec.executables  = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  spec.require_path = 'lib'
 end
