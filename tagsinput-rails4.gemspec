@@ -1,7 +1,5 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tagsinput-rails/version'
+# -*- encoding: utf-8 -*-
+require File.expand_path('../lib/tagsinput-rails4/version', __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name          = 'tagsinput-rails4'
@@ -20,7 +18,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "railties", ">= 3.1.0"
 
-  spec.files        = `git ls-files`.split("\n")
+  spec.files        = `git ls-files`.split("\n").reject { |f| f =~ /^gemspec|^gitignore/ }
   spec.executables  = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_path = 'lib'
 end
